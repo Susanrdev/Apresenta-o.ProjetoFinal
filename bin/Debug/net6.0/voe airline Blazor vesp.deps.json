@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "voe airline Blazor vesp/1.0.0": {
+        "runtime": {
+          "voe airline Blazor vesp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "voe airline Blazor vesp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
