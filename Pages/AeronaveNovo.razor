@@ -1,0 +1,34 @@
+@page "/aeronavenovo"
+@using System.Net
+
+<h4>Lista de Aeronave</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Código</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var aeronave in aeronaves)
+        {
+            <tr>
+                <th scope="row">@aeronave.Id</th>
+                <td>@aeronave.Modelo</td>
+                <td>@aeronave.Codigo</td>
+            </tr>
+        }
+  </tbody>
+  @code {
+    IEnumerable<voe_airline_Blazor_vesp.Data.Aeronave> aeronaves = Array.Empty<voe_airline_Blazor_vesp.Data.Aeronave>();
+    protected override async Task OnInitializedAsync(){
+        var client = new HttpClient();
+        client.BaseAddress = new Uri("http://localhost:7142/");
+        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+        System.Net.Http.HttpResponseMessage response = client.GetAsync("api/aeronaves").Result;
+        aeronaves = response.Content.ReadFromJsonAsync<IEnumerable<voe_airline_Blazor_vesp.Data.Aeronave>>().Result;
+    }
+  }
+</table>

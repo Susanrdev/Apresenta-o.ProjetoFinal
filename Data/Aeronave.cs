@@ -7,15 +7,15 @@ namespace voe_airline_Blazor_vesp.Data
 {
     public class Aeronave
     {
+        public int? Id { get; set; }
         public string? Modelo { get; set; }
         public string? Codigo { get; set;}
-        public string? Fabricante { get; set;}
       
-        public Aeronave(string? modelo, string? codigo, string? fabricante)
+        public Aeronave(string? modelo, string? codigo, int? id)
         {
             Modelo = modelo;
             Codigo = codigo;
-            Fabricante = fabricante;
+            Id = id;
         }
     }
 }
